@@ -1,0 +1,15 @@
+<div align="left"> 
+  <h1> {{ name }} </h1>
+  {{ address }}
+  <table>
+  <tr *ngFor = "let contactInfo of contactInfos ">
+    <td>{{ contactInfo }} </td>
+  </tr>
+</table>
+<hr>
+</div>
+<div align="left">
+<app-experience></app-experience>
+<hr>
+<app-educations></app-educations>
+</div>
