@@ -1,0 +1,22 @@
+var hw = "Hello, World";
+var myName = "Sumit";
+var arr = [];
+var arr1 = arr;
+arr.push("1");
+var color;
+(function (color) {
+    color[color["Red"] = 5] = "Red";
+    color[color["white"] = 3] = "white";
+    color[color["yellow"] = 4] = "yellow";
+    color[color["green"] = 7] = "green";
+    color[color["blue"] = 8] = "blue";
+})(color || (color = {}));
+console.log(hw, myName);
+console.log(arr);
+console.log(color.Red);
+console.log(color.blue);
+console.log(color.yellow);
+console.log(typeof arr);
+console.log(typeof hw);
+console.log(typeof myName);
+console.log(typeof color);
