@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EducationService } from './education.service';
 
 @Component({
   selector: 'app-educations',
@@ -6,15 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./educations.component.css']
 })
 export class EducationsComponent implements OnInit {
-educations = [];
-  constructor() { }
+educations: string[];
+  constructor(private education: EducationService) { }
 
   ngOnInit() {
-    this.educations = [
-      'PhD',
-      'Master',
-      'Bachalars'
-    ];
+    this.educations = this.education.getEducations();
   }
-
 }
