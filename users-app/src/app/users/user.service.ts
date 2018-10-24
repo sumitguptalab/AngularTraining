@@ -1,0 +1,36 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { Observable } from 'rxjs';
+
+import { User } from './user.class';
+import { JsonResp } from '../json-resp.class';
+
+const url = 'http://localhost:5000/users/';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
+  constructor(private http: HttpClient) { }
+
+  list(): Observable<JsonResp> {
+    return this.http.get(url + 'list') as Observable<JsonResp>;
+  }
+
+  get(id): Observable<JsonResp> {
+    return this.http.get(url + 'get/' + id) as Observable<JsonResp>;
+  }
+
+  create(user: User): Observable<JsonResp> {
+    return this.http.post(url + 'create', user) as Observable<JsonResp>;
+  }
+
+  change(user: User): Observable<JsonResp> {
+    return this.http.post(url + 'change', user) as Observable<JsonResp>;
+  }
+
+  remove(user: User): Observable<JsonResp> {
+    return this.http.post(url + 'delete', user) as Observable<JsonResp>;
+  }
+}

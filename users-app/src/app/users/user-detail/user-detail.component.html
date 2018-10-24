@@ -1,0 +1,40 @@
+<div class="component">
+  <header>
+    <span class="page-title">Create User</span>
+    <span> | <a routerLink='/users/list'>Back To List</a> </span>
+  </header>
+  <table class="table table-sm" *ngIf="user">
+    <tr>
+      <td>ID:</td>
+      <td>{{ user.Id }}</td>
+    </tr>
+    <tr>
+      <td>Name:</td>
+      <td>{{ user.FirstName}} {{ user.LastName}}</td>
+    </tr>
+    <tr>
+      <td>User name:</td>
+      <td>{{ user.UserName }}</td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td>{{ user.Password }}</td>
+    </tr>
+    <tr>
+      <td>Phone:</td>
+      <td>{{ user.Phone }}</td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td>{{ user.Email }}</td>
+    </tr>
+    <tr>
+      <td>IsReviewer?:</td>
+      <td>{{ user.IsReviewer ? "Y" : "N"}}</td>
+    </tr>
+    <tr>
+      <td>ISAdmin:</td>
+      <td>{{ user.IsAdmin ? "Y" : "N" }}</td>
+    </tr>
+  </table>
+</div>
