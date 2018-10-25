@@ -6,9 +6,13 @@ import { UserDetailComponent } from './users/user-detail/user-detail.component';
 import { UserCreateComponent } from './users/user-create/user-create.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
 import { UserDeleteComponent } from './users/user-delete/user-delete.component';
+import { LoginComponent } from './login/login.component';
+
+
 
 const routes: Routes = [
-  {path: '', redirectTo: '/users/list', pathMatch: 'full'},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: 'login',  component: LoginComponent },
   {path: 'user/list',  component: UserListComponent },
   {path: 'user/create',  component: UserCreateComponent },
   {path: 'user/detail/:id',  component: UserDetailComponent },

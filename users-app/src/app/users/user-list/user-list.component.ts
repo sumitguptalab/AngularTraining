@@ -7,6 +7,7 @@ import { JsonResp } from '../../json-resp.class';
 import { Observable } from 'rxjs';
 
 import {  Router } from '@angular/router';
+import { SystemService } from '../../system.service';
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -18,9 +19,10 @@ export class UserListComponent implements OnInit {
 
   users: User[];
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private systemService: SystemService , private router: Router) { }
 
   ngOnInit() {
+    this.systemService.isLoggedIn();
 
     this.userService.list().subscribe(jsonResp => {
       console.log(jsonResp);
